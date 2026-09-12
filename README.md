@@ -1,4 +1,4 @@
-# highstyle: Visualisation package for Mowiz
+# highstyle: R custom visualisation package
 
 highstyle is an R package containing standardised R functions for visualising data. This way you create visually consistant plots across projects without having to repeatedly rewrite, copy, or retrieve previously used code snippets.
 
