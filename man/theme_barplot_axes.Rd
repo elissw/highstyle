@@ -5,7 +5,7 @@
 \alias{theme_barplot_axes}
 \title{Theme add-on for barplots/lollipops}
 \format{
-An object of class \code{theme} (inherits from \code{gg}) of length 6.
+An object of class \code{theme} (inherits from \code{ggplot2::theme}, \code{gg}, \code{S7_object}) of length 6.
 }
 \usage{
 theme_barplot_axes
@@ -16,6 +16,6 @@ No x axis and no title for y axis. Also no grid.
 }
 \details{
 Use by adding +theme_barplot_axes to your ggplot object
-Better do it after +theme_professional() so you don't override it.
+Better do it after +theme_highstyle() so you don't override it.
 }
 \keyword{datasets}

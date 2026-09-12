@@ -1,28 +1,23 @@
 # Plotting instructions
 
-For plots that are coherent with the ones provided by the RoViz package. Confirm whether or not you're working in the package environment, so you can reference or not the available scripts.
+For plots that are coherent with the ones provided by this package. Confirm whether or not you're working in the package environment, so you can reference or not the available scripts.
 
 ## 1. General guidelines
 
 ### Keep in mind
-- If you need to create a plot that doesn't exist and you have access to the package scripts, look through them to see how similar plots are created. If not, follow the instructions below extra carefully.
 - If you prefer creating your plots in python, it's perfectly ok but try to mimic the style of the R plots as closely as possible. 
 
 ### General theme/titles
-- All plots **must** use `theme_professional()` (if you don't have access to the whole package and don't know what 'theme_professional() is, read below for the theme specifications)
+- All plots **must** use `theme_highstyle()` (if you don't have access to the whole package and don't know what 'theme_highstyle() is, read below for the theme specifications)
 - When writing a title for an axis, use this format: Variable [units]
-- In case of a frequency plot/histogram/etc, use "Number of items" or "Number of packages" as a y axis title, depending on the input dataframe
+- In case of a frequency plot/histogram/etc, use "Number of items" or "Number of packages" as a y axis title, etc, depending on the input dataframe
 - Avoid plot titles unless necessary (for example when the plot will be part of a bigger plot ensemble). If you use a title, make it short, concise and descriptive
 
 ### Scales
-- If the data span many orders of magnitude, use a logarithmic scale axis. Examples of variables that are better to be plotted with a logarithmic scale are dose rates, activity values, IRAS, LL, etc.
+- If the data span many orders of magnitude, use a logarithmic scale axis. 
 
 ### Units disclaimer:
 The units that are mentioned in these instructions regarding point size, line thickness, etc are given in ggplot2 units so in millimeters. If plotting with something else, convert these values accordingly before applying them. This includes not only data geometry lines but also axis lines, tick lines, plot lines, etc.
-
-### Specific variables
-- If you need to plot a variable which is attached to a distance (variables with _xcm in their name, eg itm_DR_10cm_uSv_h), mention the distance in the axis title (eg `Dose rate @ 10cm [uSv/h]`)
-- If you need to plot a variable called awz_something (eg awz_IRAS), this awz stands for ActiWiz so include it in the title (eg ActiWiz IRAS)
 
 ### Specific plots:
 Scatter plots:
@@ -30,8 +25,8 @@ Scatter plots:
 - When plotting a scatter plot with a large amount of points, use an alpha of 0.6 to improve readability
 
 Histograms:
-- When plotting a histogram, if you're seeing the package scripts, use `geom_histogram_custom`, so that all histograms are plotted without excessive amount of ink. If you don't have access to the package, then this means: plot the histogram as an outline-only step path, not filled bars, no full vertical bars down to the axis. Just the histogram tops. 
-- If the user does not specify a binwidth/number of bins, use the Freedman-Diaconis rule to calculate the best suiting binwidth. Take extra care in case the axis needs to be logarithmic. If you have access to the whole package scripts, use the functions provided in `histogram_functions.R` to calculate the binwidth.
+- When plotting a histogram, if you're seeing the package scripts, use `geom_histogram_highstyle`, so that all histograms are plotted without excessive amount of ink. If you don't have access to the package, then this means: plot the histogram as an outline-only step path, not filled bars, no full vertical bars down to the axis. Just the histogram tops. 
+- If the user does not specify a binwidth/number of bins, use the Freedman-Diaconis rule to calculate the best suiting binwidth. Take extra care in case the axis needs to be logarithmic. If you have access to the whole package scripts, use the functions provided in `ut_stat_functions.R` to calculate the binwidth.
 
 Barplots/Lollipop plots
 - When plotting a barplot or a lollipop plot, make the bars horizontal so the label of each is easy to read on the y axis. 
@@ -47,7 +42,7 @@ Boxplots:
 - When plotting a boxplot, use an alpha of 0.6 for the fill colour and linewidth=0.8 for the line
 
 Comparative plots:
-- When comparing the same measurement at multiple distances/conditions, overlay the distributions in one plot (not separate subplots). Use different colours for each (see colour rules below) and annotate them at the top-right
+- When comparing the same measurement at multiple conditions, overlay the distributions in one plot (not separate subplots). Use different colours for each (see colour rules below) and annotate them at the top-right
 
 ### Other plot elements:
 - When plotting any line, use a linewidth of 0.8 to improve readability
@@ -153,12 +148,4 @@ Legend text:
     - Thin gray border
 - Space between panels: 14 pt
 
-
-## 3. Where to add reference values
-
-Note: Do not force these lines but ask the user if maybe they're interested.
-
-- If someone wants to plot the distribution of **IRAS** values, ask if they would like you to plot a reference line at IRAS = 10. That's an indication between TFA and FMA waste. You can also calculate the percentage of items below and above IRAS = 10 and indicate that too on the plot
-- If someone wants to plot the distribution of **LL** values, ask if they would like you to plot a reference line at LL = 1, since items with LL below 1 are candidates for clearance
-- If you need to plot a scatterplot comparing two variables, for example IRAS and awz_IRAS, ask if they would like you to add a reference `geom_abline(slope=1, intercept=0)` (so a y=x line) to easily show when the two values would be equal. 
 

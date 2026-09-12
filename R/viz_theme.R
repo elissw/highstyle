@@ -3,12 +3,12 @@
 #' Theme so all plots are homogeneous in terms of
 #' grids, axes, font sizes, etc. 
 #' 
-#' Use either by adding +theme_professional()
-#' to your ggplot object or by theme_set(theme_professional()) in your script.
-#' @name theme_professional
+#' Use either by adding +theme_highstyle()
+#' to your ggplot object or by theme_set(theme_highstyle()) in your script.
+#' @name theme_highstyle
 #' @export
 
-theme_professional <- function(base_size = 12, base_family = "sans") {
+theme_highstyle <- function(base_size = 12, base_family = "sans") {
 
   # Start on the basis of theme_classic
   ggplot2::theme_classic(base_size = base_size, base_family = base_family) +
@@ -78,7 +78,7 @@ theme_professional <- function(base_size = 12, base_family = "sans") {
 #' Theme function that deletes the x axis of a plot
 #' 
 #' Use by adding +theme_no_x_axis to your ggplot object
-#' Better do it after +theme_professional() so you don't override it.
+#' Better do it after +theme_highstyle() so you don't override it.
 #' @export
 theme_no_x_axis <- ggplot2::theme(axis.line.x = ggplot2::element_blank(),
                                   axis.ticks.x = ggplot2::element_blank(),
@@ -89,7 +89,7 @@ theme_no_x_axis <- ggplot2::theme(axis.line.x = ggplot2::element_blank(),
 #' Theme function that deletes the y axis of a plot
 #' 
 #'Use by adding +theme_no_y_axis to your ggplot object
-#' Better do it after +theme_professional() so you don't override it.
+#' Better do it after +theme_highstyle() so you don't override it.
 #' @export
 theme_no_y_axis <- ggplot2::theme(axis.line.y = ggplot2::element_blank(),
                                   axis.ticks.y = ggplot2::element_blank(),
@@ -101,7 +101,7 @@ theme_no_y_axis <- ggplot2::theme(axis.line.y = ggplot2::element_blank(),
 #' No x axis and no title for y axis. Also no grid.
 #' 
 #' Use by adding +theme_barplot_axes to your ggplot object
-#' Better do it after +theme_professional() so you don't override it.
+#' Better do it after +theme_highstyle() so you don't override it.
 #' @export
 theme_barplot_axes <- ggplot2::theme(axis.line.x = ggplot2::element_blank(),
                                      axis.ticks.x = ggplot2::element_blank(),

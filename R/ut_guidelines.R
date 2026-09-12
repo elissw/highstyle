@@ -19,8 +19,8 @@ For help with a specific function, do
   ?function_name
 
 For following our custom made theme with your plots, do
-  + theme_professional() to your ggplot object or
-  theme_set(theme_professional()) in your script
+  + theme_highstyle() to your ggplot object or
+  theme_set(theme_highstyle()) in your script
 
 To save a plot with our fixed aspect ratio and resolution, use
   save_plot(plot,rows,columns,legend,filename)
