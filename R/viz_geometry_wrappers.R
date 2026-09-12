@@ -153,6 +153,17 @@ draw_panel = function(data, panel_params, coord) {
 }
 )
 
+#' Custom geom_lollipop
+#' 
+#' Purpose: To avoid having to manually add points and segments for lollipop plots
+#' 
+#' Use: Exactly like any other ggplot geom. Defaults will be overriden if specified otherwise in the arguments. 
+#' @name geom_lollipop_highstyle
+#' @param x The x position of the segments's beginning.
+#' @param y The y position of the segment's beginning.
+#' @param xend The x position of the segment's end. (where the lollipop's point will be)
+#' @param yend The y position of the segment's end. (where the lollipop's point will be)  
+#' @export
 geom_lollipop_highstyle <- function(mapping = NULL,
                           data = NULL,
                           stat = "identity",

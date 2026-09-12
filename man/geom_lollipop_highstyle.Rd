@@ -10,13 +10,37 @@ An object of class \code{GeomLollipop} (inherits from \code{Geom}, \code{ggproto
 }
 \usage{
 GeomLollipop
+
+geom_lollipop_highstyle(
+  mapping = NULL,
+  data = NULL,
+  stat = "identity",
+  position = "identity",
+  ...,
+  na.rm = FALSE,
+  show.legend = NA,
+  inherit.aes = TRUE
+)
+}
+\arguments{
+\item{x}{The x position of the segments's beginning.}
+
+\item{y}{The y position of the segment's beginning.}
+
+\item{xend}{The x position of the segment's end. (where the lollipop's point will be)}
+
+\item{yend}{The y position of the segment's end. (where the lollipop's point will be)}
 }
 \description{
 Purpose: To avoid manually adding points and segments etc
+
+Purpose: To avoid having to manually add points and segments for lollipop plots
 }
 \details{
 Use: Exactly like any other ggplot geom.
 Just use the x, xend, y, yend you want your segmnts to extend to and your points to be at
 Defaults will be overriden if specified otherwise in the arguments.
+
+Use: Exactly like any other ggplot geom. Defaults will be overriden if specified otherwise in the arguments.
 }
 \keyword{datasets}
