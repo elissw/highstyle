@@ -24,12 +24,6 @@ For following our custom made theme with your plots, do
 
 To save a plot with our fixed aspect ratio and resolution, use
   save_plot(plot,rows,columns,legend,filename)
-
-******************************************************
-  Next to the package directory you can find a folder
-  named 'examples'. Go ahead and check it out so you
-  get the feeling of how everything works and what 
-  functions are available to you.
 ======================================================
 ")
 }
