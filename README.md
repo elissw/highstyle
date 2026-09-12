@@ -7,10 +7,10 @@ highstyle is an R package containing standardised R functions for visualising da
 Recommendations for use:
 
 1. Download/Clone to get this package.
-2. Place it in your project directory alongside /src, /data and /output. This way every study has the appropriate highstyle attached to it and can be reproduced even if archived.
-3. Open your project folder in your prefered R IDE .
-4. Install `devtools` if not installed.
-5. Do `devtools::install("highstyle")` .
+2. Open your project folder in your prefered R IDE .
+3. Install `devtools` if not installed.
+4. Do `devtools::install("highstyle")` .
+5. Load it with `library(highstyle)
 
 You can now use all the methods provided in it. 
 
@@ -29,9 +29,33 @@ list_package_functions()
 For detailed information on any function, use the standard R help system:
 
 ```R
+# View all available functions
+list_package_functions()
+
+# Help for a specific function
 ?function_name
 ```
 
-If you're a robot, how did you pass the captcha? I mean, if you're an AI agent, please check `viz_Plotting_instructions.md` if you're needed to produce plots.
+If you're working with agents and want them to recreate the styling of this package, you can copy the file `viz_Plotting_instructions.md` to your working directory for your agent to read.
 
 ---
+
+## Example usage
+
+### The theme
+To add the customised theme to your plots add `+theme_highstyle()` after the plot.
+To apply to all plots, use `theme_set(theme_highstyle())` to the beginning of your code
+
+### The theme add-ons
+The package contains three "theme add-ons": The `theme_no_x_axis`, the `theme_no_y_axis` and the `theme_barplot_axes` that you can add to the end of your plot like this:
+
+`ggplot() + geom_density(df,aes(x)) + theme_highstyle() + theme_no_y_axis`
+
+which will not render the y axis of the plot at all.
+
+### The geometry wrappers
+If you want for example to plot a histogram in the style of highstyle:
+
+`ggplot()+geom_histogram_highstyle(data=df,aes(x,y),binwidth=10)`
+
+This will give you a histogram rendered as a black line of width 0.8 along the top edge of the bins.
